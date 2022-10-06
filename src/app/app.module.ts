@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageRoutingModule } from './module/home-page/home-page-routing.module';
+import {HomePageModule} from "./module/home-page/home-page.module";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomePageRoutingModule } from './module/home-page/home-page-routing.modu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HomePageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

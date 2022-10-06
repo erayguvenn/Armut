@@ -11,6 +11,10 @@ import {HomePageRoutingModule} from "./home-page-routing.module";
     NavbarComponent,
     HomeComponent
   ],
+  exports: [
+    NavbarComponent,
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     HomePageRoutingModule
