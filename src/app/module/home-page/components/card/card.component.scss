@@ -1,5 +1,6 @@
 .card{
 cursor: pointer;
+
 }
 .teklif-button{
   width: 100%;
@@ -7,15 +8,17 @@ cursor: pointer;
   background-color: #2cb34f;
   border: none;
 
+
 }
 
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.card-body{
+
 }
+
 .card{
   margin: 10px;
+  width: 25rem;
+  height: 32rem;
 }
 .dark-overlay{
   background: #000;
