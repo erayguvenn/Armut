@@ -48,8 +48,27 @@ p{
 h3{
   margin-top: 20px;
 }
-.howto{
-  width:370px;
-  height: 540px;
+.card-title{
+  text-align: center;
+  font-weight: bold;
+  color:#2CB34F ;
+  font-size: 48px;
+}
+.card-second-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #111321;
+  border: none;
+}
+.line{
+  text-align: center;
+  color: #1CA03E;
+  font-size: 30px;
+}
+.card-text{
+  text-align: center;
+  font-size: 14px;
+  color: #747A7D;
 }
 
