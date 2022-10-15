@@ -1,0 +1,41 @@
+
+
+.card{
+  cursor: pointer;
+
+}
+.teklif-button{
+  width: 100%;
+  font-weight: bold;
+  background-color: #2cb34f;
+  border: none;
+
+
+}
+
+.card-body{
+
+}
+
+.card{
+  margin: 10px;
+  width: 25rem;
+  height: 32rem;
+}
+.dark-overlay{
+  background: #000;
+  display: block;
+  height: 175px;
+  opacity: 0;
+  position: absolute;
+  transition: all .5s cubic-bezier(.23,1,.32,1);
+  -webkit-transition: all .5s cubic-bezier(.23,1,.32,1);
+  width: 100%;
+  z-index: 2;
+}
+.card:hover{
+  .dark-overlay{
+    opacity: 25%;
+  }
+}
+
