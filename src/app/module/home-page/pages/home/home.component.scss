@@ -1,29 +1,30 @@
 .page-first{
-  height: 660px;
+  height: 600px;
   background-image: url("/assets/images/armut_background.jpg") ;
+  background-position:30% 50%;
 }
 .first{
   color: white;
   font-size: 75px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+
 }
 .second{
   color: white;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 200px;
+
 }
 .pic-one{
-  width: 490px;
-  height: 350px;
+  width: 570px;
+  height: 395px;
   margin-right: 20px;
-  margin-top: 25%;
+  vertical-align: center;
 }
 .first-h2{
-  margin-top: 65%;
+  margin-top: 35%;
   font-weight: bold;
   font-size: 30px;
   color: #585965;
@@ -91,4 +92,11 @@ background-size:cover ;
   text-align: center;
   margin-bottom: 25px;
   color: #585965;
+}
+.first-title{
+ padding-top: 6%;
+  padding-left: 5%;
+}
+.kaliteli-hizmet-main{
+  margin-top: 14%;
 }
