@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import {HomePageRoutingModule} from "./home-page-routing.module";
 import { NavbarInputButtonComponent } from './components/navbar-input-button/navbar-input-button.component';
 import { FormSearchComponent } from './components/form-search/form-search.component';
+import {LoginComponent} from "./components/login/login.component";
 
 
 
@@ -13,7 +14,8 @@ import { FormSearchComponent } from './components/form-search/form-search.compon
     NavbarComponent,
     HomeComponent,
     NavbarInputButtonComponent,
-    FormSearchComponent
+    FormSearchComponent,
+    LoginComponent
   ],
   exports: [
     NavbarComponent,
