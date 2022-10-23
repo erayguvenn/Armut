@@ -1,47 +1,53 @@
-<div class="div_nav">
-<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
-  <div class="container-fluid">
-    <img class="logo" src="/assets/images/armut-logo-colour-negative.png">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">TEMİZLİK</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">TADİLAT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">NAKLİYAT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">TAMİR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">ÖZEL DERS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">SAĞLIK</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">DÜĞÜN</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">DİĞER</a>
-        </li>
-      </ul>
+
+<div class="container-class" >
+  <nav class="navbar navbar-expand-lg " aria-label="Fifth navbar example">
+    <div  class="container-fluid">
+      <span  class="menu-button" style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; Menü</span>
+      <div  [style]="sideNavVis" id="mySidenav" class="sidenav">
+        <div class="closebtn" (click)="closeNav()"></div>
+        <span  class="close" (click)="closeNav()">x</span>
+        <a class="nav-link " aria-current="page" href="#">TEMİZLİK</a>
+        <a class="nav-link " aria-current="page" href="#">TADİLAT</a>
+        <a class="nav-link " aria-current="page" href="#">NAKLİYAT</a>
+        <a class="nav-link " aria-current="page" href="#">TAMİR</a>
+        <a class="nav-link " aria-current="page" href="#">ÖZEL DERS</a>
+        <a class="nav-link " aria-current="page" href="#">SAĞLIK</a>
+        <a class="nav-link " aria-current="page" href="#">DÜĞÜN</a>
+        <a class="nav-link " aria-current="page" href="#">DİĞER</a>
+      </div>
+      <a class="navbar-brand page-name" href="#" >Hizmetim </a>
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">TEMİZLİK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">TADİLAT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">NAKLİYAT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">TAMİR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">ÖZEL DERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">SAĞLIK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">DÜĞÜN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">DİĞER</a>
+          </li>
+        </ul>
+      </div>
+      <app-navbar-input-button></app-navbar-input-button>
     </div>
-  </div>
-</nav>
+  </nav>
+
 </div>
+
 
