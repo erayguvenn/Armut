@@ -1,41 +1,58 @@
 
-
-.card{
+.card {
   cursor: pointer;
 
 }
-.teklif-button{
-  width: 100%;
+
+.teklif-button {
+  width: 89%;
   font-weight: bold;
   background-color: #2cb34f;
   border: none;
+  position: absolute;
+  bottom: 10px;
+
 }
-.teklif-button:hover{
+
+.teklif-button:hover {
   background-color: #2cb34f;
 }
 
-.card-body{
 
-}
-
-.card{
+.card {
   margin: 10px;
-  width: 25rem;
-  height: 32rem;
+  width: 18rem;
+  height: 24rem;
 }
-.dark-overlay{
+
+@media screen and (max-width: 769px) {
+  .card {
+    width: 16rem;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    margin: auto;
+  }
+
+}
+
+.dark-overlay {
   background: #000;
   display: block;
   height: 175px;
   opacity: 0;
   position: absolute;
-  transition: all .5s cubic-bezier(.23,1,.32,1);
-  -webkit-transition: all .5s cubic-bezier(.23,1,.32,1);
+  transition: all .5s cubic-bezier(.23, 1, .32, 1);
+  -webkit-transition: all .5s cubic-bezier(.23, 1, .32, 1);
   width: 100%;
   z-index: 2;
 }
-.card:hover{
-  .dark-overlay{
+
+.card:hover {
+  .dark-overlay {
     opacity: 25%;
   }
 }

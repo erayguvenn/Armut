@@ -7,6 +7,9 @@ import { NavbarInputButtonComponent } from './components/navbar-input-button/nav
 import { FormSearchComponent } from './components/form-search/form-search.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { HizmetlerLinkComponent } from './components/hizmetler-link/hizmetler-link.component';
+import { GirisComponent } from './pages/giris/giris.component';
+import { HizmetverComponent } from './pages/hizmetver/hizmetver.component';
+import { YardimComponent } from './pages/yardim/yardim.component';
 
 
 
@@ -18,7 +21,10 @@ import { HizmetlerLinkComponent } from './components/hizmetler-link/hizmetler-li
     NavbarInputButtonComponent,
     FormSearchComponent,
     CardsComponent,
-    HizmetlerLinkComponent
+    HizmetlerLinkComponent,
+    GirisComponent,
+    HizmetverComponent,
+    YardimComponent
 
   ],
   exports: [
