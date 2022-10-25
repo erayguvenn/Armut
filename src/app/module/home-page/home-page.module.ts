@@ -10,6 +10,7 @@ import { HizmetlerLinkComponent } from './components/hizmetler-link/hizmetler-li
 import { GirisComponent } from './pages/giris/giris.component';
 import { HizmetverComponent } from './pages/hizmetver/hizmetver.component';
 import { YardimComponent } from './pages/yardim/yardim.component';
+import { UyeOlComponent } from './pages/uye-ol/uye-ol.component';
 
 
 
@@ -24,7 +25,8 @@ import { YardimComponent } from './pages/yardim/yardim.component';
     HizmetlerLinkComponent,
     GirisComponent,
     HizmetverComponent,
-    YardimComponent
+    YardimComponent,
+    UyeOlComponent
 
   ],
   exports: [
