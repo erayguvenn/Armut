@@ -1,9 +1,9 @@
-
 .card {
   cursor: pointer;
-
+  margin: 10px;
+  width: 18rem;
+  height: 24rem;
 }
-
 .teklif-button {
   width: 89%;
   font-weight: bold;
@@ -13,32 +13,21 @@
   bottom: 10px;
 
 }
-
 .teklif-button:hover {
   background-color: #2cb34f;
 }
-
-
-.card {
-  margin: 10px;
-  width: 18rem;
-  height: 24rem;
-}
-
 @media screen and (max-width: 769px) {
   .card {
     width: 16rem;
   }
 
 }
-
 @media screen and (max-width: 576px) {
   .card {
     margin: auto;
   }
 
 }
-
 .dark-overlay {
   background: #000;
   display: block;

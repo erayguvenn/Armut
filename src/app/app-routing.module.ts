@@ -5,9 +5,15 @@ import {GirisComponent} from "./module/home-page/pages/giris/giris.component";
 import {HizmetverComponent} from "./module/home-page/pages/hizmetver/hizmetver.component";
 import {YardimComponent} from "./module/home-page/pages/yardim/yardim.component";
 import {UyeOlComponent} from "./module/home-page/pages/uye-ol/uye-ol.component";
+import {CardsComponent} from "./module/home-page/components/cards/cards.component";
 
 
 const routes: Routes = [
+
+  {
+    path: 'card',
+    component: CardsComponent
+  },
   {
     path: 'uyeol',
     component: UyeOlComponent

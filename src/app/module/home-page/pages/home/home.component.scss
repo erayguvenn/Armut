@@ -21,10 +21,11 @@
   width: 570px;
   height: 395px;
   margin-right: 20px;
-  vertical-align: center;
+  float: right;
+
 }
 .first-h2{
-  margin-top: 35%;
+
   font-weight: bold;
   font-size: 30px;
   color: #585965;
@@ -98,5 +99,11 @@ background-size:cover ;
   padding-left: 5%;
 }
 .kaliteli-hizmet-main{
+  background-color: white;
   margin-top: 14%;
+}
+.metin{
+  padding-top: 15%;
+  padding-right: 20px;
+
 }
