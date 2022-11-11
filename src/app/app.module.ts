@@ -8,6 +8,7 @@ import {HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {AlertModule} from "ngx-bootstrap/alert";
+import {CookieService} from "ngx-cookie-service";
 
 
 
@@ -26,7 +27,7 @@ import {AlertModule} from "ngx-bootstrap/alert";
     ToastrModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

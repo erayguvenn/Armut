@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WorkCategoryService} from "../../services/work-category.service";
 
 
 @Component({
@@ -9,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   sideNavVis:string="width: 0px;"
+  workCategoryList:any
 
-  constructor() { }
+  constructor(private workCategoryService:WorkCategoryService) { }
 
   ngOnInit(): void {
+    this.workCategory()
   }
 
   openNav(){
@@ -20,6 +23,9 @@ export class NavbarComponent implements OnInit {
   }
   closeNav(){
     this.sideNavVis ="width: 0px;"
+  }
+  workCategory(){
 
+    return this.workCategoryService.getWorkCategory().subscribe(data=> console.log(data), err => console.log("Category verileri getirilemedi"))
   }
 }

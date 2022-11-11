@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import { ToastrService } from 'ngx-toastr';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
+import * as events from "events";
 
 
 @Component({
@@ -17,10 +18,15 @@ export class GirisComponent implements OnInit {
   phoneNumber: string = ""
   email: string = ""
   password: string = ""
+  adress:string=""
+  userType:string="user";
+  usertype:string=""
 
 
 
-  constructor(private authService:AuthService,private toastr: ToastrService   ) {
+
+
+  constructor(private authService:AuthService) {
 
   }
 
@@ -28,30 +34,32 @@ export class GirisComponent implements OnInit {
 
   }
 
-  showToaster(){
-    this.toastr.success("Hello, I'm the toastr message.")
-  }
+
 
   signUpButton() {
     this.buttonClass = "right-panel-active";
   }
 
   signInButton() {
+
     this.buttonClass = "";
   }
 
-  signUp(name:string,surname:string,phoneNumber:string,email:string,password:string) {
+  signUp(name:string,surname:string,phoneNumber:string,email:string,password:string,userType:string, adress:string) {
   this.name=name;
   this.surname=surname;
   this.phoneNumber=phoneNumber;
   this.email=email;
   this.password=password;
-  this.authService.signUp(this.name,this.surname,this.phoneNumber,this.email,this.password).subscribe(data=> console.log("üye olundu"), err => console.log("Hatalı bilgiler"))
+  this.adress=adress;
+  this.usertype=userType;
+  this.authService.signUp(this.name,this.surname,this.phoneNumber,this.email,this.password,this.usertype,this.adress).subscribe(data=> console.log("üye olundu"), err => console.log("Hatalı bilgiler"))
   }
   signIn(email:string,password:string) {
     this.email=email;
     this.password=password;
-    this.authService.login(this.email,this.password).subscribe(data => console.log("Giriş yapıldı"), err => console.log("Hatalı bilgiler"));
+    this.authService.login(this.email,this.password).subscribe((data) =>{
+      console.log("Giriş yapıldı")
+    } , err => console.log("Hatalı bilgiler"));
   }
-
 }

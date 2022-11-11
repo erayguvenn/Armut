@@ -11,6 +11,7 @@ import { GirisComponent } from './pages/giris/giris.component';
 import { HizmetverComponent } from './pages/hizmetver/hizmetver.component';
 import { YardimComponent } from './pages/yardim/yardim.component';
 import { UyeOlComponent } from './pages/uye-ol/uye-ol.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -35,7 +36,8 @@ import { UyeOlComponent } from './pages/uye-ol/uye-ol.component';
   ],
   imports: [
     CommonModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FormsModule
 
   ]
 })

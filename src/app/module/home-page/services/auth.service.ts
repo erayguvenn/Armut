@@ -15,10 +15,10 @@ export class AuthService {
       { email, password}
     )
   }
-  signUp(name:string,surname:string,phoneNumber:string,email:string,password:string){
+  signUp(name:string,surname:string,phoneNumber:string,email:string,password:string,usertype:string,adress:string){
     return this.http.post(
       `https://localhost:7058/api/Auth/register`,
-      {name,surname,phoneNumber, email, password}
+      {name,surname,phoneNumber, email, password,usertype,adress}
     )
   }
 }
