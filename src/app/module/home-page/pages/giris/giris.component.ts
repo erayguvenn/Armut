@@ -21,7 +21,7 @@ export class GirisComponent implements OnInit {
   adress:string=""
   userType:string="user";
   usertype:string=""
-
+  adresClass:string=""
 
 
 
@@ -33,7 +33,6 @@ export class GirisComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 
 
   signUpButton() {

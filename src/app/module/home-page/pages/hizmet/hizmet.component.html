@@ -1,0 +1,15 @@
+<div class="card-group  row-cols-sm-2 row-cols-md-3  row-cols-lg-4 g-4 ">
+  <div *ngFor="let category of workCategoryList[0] | paginate:{ itemsPerPage: 8, currentPage: p }" class="col row-cols-lg-4">
+    <div class="card">
+      <img src="https://cdn.armut.com/images/services/tr:w-278,h-168/00064-ingilizce-ozel-ders.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4>{{category.name}} </h4>
+        <p>2.209 profesyonel</p>
+        <p>4,8 (13.707 onaylı yorum)</p>
+        <button href="#" class=" teklif-button btn btn-primary">Teklif Al</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
