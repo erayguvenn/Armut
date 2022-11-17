@@ -6,6 +6,7 @@ import {HizmetverComponent} from "./module/home-page/pages/hizmetver/hizmetver.c
 import {YardimComponent} from "./module/home-page/pages/yardim/yardim.component";
 import {UyeOlComponent} from "./module/home-page/pages/uye-ol/uye-ol.component";
 import {CardsComponent} from "./module/home-page/components/cards/cards.component";
+import {HizmetComponent} from "./module/home-page/pages/hizmet/hizmet.component";
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'hizmetver',
     component: HizmetverComponent
+  },
+  {
+    path: 'hizmet',
+    component: HizmetComponent
   },
   {
     path: 'giris',

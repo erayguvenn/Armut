@@ -12,6 +12,8 @@ import { HizmetverComponent } from './pages/hizmetver/hizmetver.component';
 import { YardimComponent } from './pages/yardim/yardim.component';
 import { UyeOlComponent } from './pages/uye-ol/uye-ol.component';
 import {FormsModule} from "@angular/forms";
+import {NgxPaginationModule} from "ngx-pagination";
+import { HizmetComponent } from './pages/hizmet/hizmet.component';
 
 
 
@@ -27,19 +29,21 @@ import {FormsModule} from "@angular/forms";
     GirisComponent,
     HizmetverComponent,
     YardimComponent,
-    UyeOlComponent
+    UyeOlComponent,
+    HizmetComponent
 
   ],
   exports: [
     NavbarComponent,
     HomeComponent
   ],
-  imports: [
-    CommonModule,
-    HomePageRoutingModule,
-    FormsModule
+    imports: [
+        CommonModule,
+        HomePageRoutingModule,
+        FormsModule,
+        NgxPaginationModule
 
-  ]
+    ]
 })
 export class HomePageModule { }
 

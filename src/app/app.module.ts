@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {AlertModule} from "ngx-bootstrap/alert";
 import {CookieService} from "ngx-cookie-service";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -25,7 +26,9 @@ import {CookieService} from "ngx-cookie-service";
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    NgxPaginationModule
+
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
