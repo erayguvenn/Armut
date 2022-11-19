@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import {NgxPaginationModule} from "ngx-pagination";
 import { HizmetComponent } from './pages/hizmet/hizmet.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SimpleNavbarComponent } from './components/simple-navbar/simple-navbar.component';
 
 
 
@@ -32,7 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
     YardimComponent,
     UyeOlComponent,
     HizmetComponent,
-    FooterComponent
+    FooterComponent,
+    SimpleNavbarComponent
 
   ],
   exports: [
