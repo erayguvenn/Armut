@@ -1,18 +1,27 @@
+
 <div style="background-color:#888888">
   <app-navbar></app-navbar>
 </div>
 <div class="container">
   <div class="card-group  row-cols-sm-2 row-cols-md-3  row-cols-lg-4 g-4 ">
-    <div *ngFor="let category of workCategoryList[0] | paginate:{ itemsPerPage: 8, currentPage: p }" class="col row-cols-lg-4">
+    <div *ngFor="let cat of category | paginate:{ itemsPerPage: 8, currentPage: p }"
+         class="col row-cols-lg-4">
       <div class="card">
-        <img src="https://cdn.armut.com/images/services/tr:w-278,h-168/00064-ingilizce-ozel-ders.jpg" class="card-img-top" alt="...">
+        <img src="https://cdn.armut.com/images/services/tr:w-278,h-168/00064-ingilizce-ozel-ders.jpg"
+             class="card-img-top" alt="...">
         <div class="card-body">
-          <h4>{{category.name}} </h4>
+          <h4>{{cat.name}} </h4>
           <p>2.209 profesyonel</p>
           <p>4,8 (13.707 onaylı yorum)</p>
           <button href="#" class=" teklif-button btn btn-primary">Teklif Al</button>
         </div>
       </div>
+    </div>
+  </div>
+  <div  class="hizmetler-link">
+    <h3 style="text-align: center; padding-bottom: 35px; padding-top:30px ">{{hizmetTitle}}</h3>
+    <div *ngFor="let name of categoryName" >
+        <a class="hizmet-link-buton " href="#">{{name}}</a>
     </div>
   </div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
