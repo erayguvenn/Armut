@@ -1,4 +1,4 @@
 <form class="search-form" action="/action_page.php" style="margin:auto;">
-  <input class="search-input" type="text" placeholder="hangi hizmeti arıyorsun?">
-  <button class="search-button" >Ara</button>
+  <input #searchInput class="search-input" type="text" placeholder="hangi hizmeti arıyorsun?">
+  <button class="search-button" (click)="getSearch(searchInput.value)" >Ara</button>
 </form>

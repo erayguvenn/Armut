@@ -26,6 +26,6 @@ export class NavbarComponent implements OnInit {
   }
   workCategory(){
 
-    return this.workCategoryService.getWorkCategory().subscribe(data=> console.log(data), err => console.log("Category verileri getirilemedi"))
+    return this.workCategoryService.getWorkCategory().subscribe(data=> console.log(), err => console.log("Category verileri getirilemedi"))
   }
 }

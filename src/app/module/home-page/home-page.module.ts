@@ -16,6 +16,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { HizmetComponent } from './pages/hizmet/hizmet.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SimpleNavbarComponent } from './components/simple-navbar/simple-navbar.component';
+import {RouterLinkWithHref} from "@angular/router";
 
 
 
@@ -45,7 +46,8 @@ import { SimpleNavbarComponent } from './components/simple-navbar/simple-navbar.
         CommonModule,
         HomePageRoutingModule,
         FormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        RouterLinkWithHref
 
     ]
 })
