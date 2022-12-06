@@ -17,7 +17,7 @@ export class HizmetComponent implements OnInit {
   params={}
   category:any=[]
   categoryName:any=[]
-  hizmetTitle:string="Temizlik Hizmetleri"
+  hizmetTitle:string=""
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
