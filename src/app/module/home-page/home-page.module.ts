@@ -17,6 +17,9 @@ import { HizmetComponent } from './pages/hizmet/hizmet.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SimpleNavbarComponent } from './components/simple-navbar/simple-navbar.component';
 import {RouterLinkWithHref} from "@angular/router";
+import { KullaniciComponent } from './pages/kullanici/kullanici.component';
+import { HesabimComponent } from './components/hesabim/hesabim.component';
+import { HesabimNavbarComponent } from './components/hesabim-navbar/hesabim-navbar.component';
 
 
 
@@ -35,7 +38,10 @@ import {RouterLinkWithHref} from "@angular/router";
     UyeOlComponent,
     HizmetComponent,
     FooterComponent,
-    SimpleNavbarComponent
+    SimpleNavbarComponent,
+    KullaniciComponent,
+    HesabimComponent,
+    HesabimNavbarComponent
 
   ],
   exports: [
