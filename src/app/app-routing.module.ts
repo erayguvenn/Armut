@@ -8,6 +8,9 @@ import {UyeOlComponent} from "./module/home-page/pages/uye-ol/uye-ol.component";
 import {CardsComponent} from "./module/home-page/components/cards/cards.component";
 import {HizmetComponent} from "./module/home-page/pages/hizmet/hizmet.component";
 import {FooterComponent} from "./module/home-page/components/footer/footer.component";
+import {KullaniciComponent} from "./module/home-page/pages/kullanici/kullanici.component";
+import {HesabimNavbarComponent} from "./module/home-page/components/hesabim-navbar/hesabim-navbar.component";
+import {HesabimComponent} from "./module/home-page/components/hesabim/hesabim.component";
 
 
 const routes: Routes = [
@@ -48,7 +51,18 @@ const routes: Routes = [
     path: 'footer',
     component: FooterComponent
   },
-
+  {
+    path: 'kullanici',
+    component: KullaniciComponent
+  },
+  {
+    path: 'hesabim-navbar',
+    component: HesabimNavbarComponent
+  },
+  {
+    path: 'hesabim',
+    component: HesabimComponent
+  },
 ];
 
 
