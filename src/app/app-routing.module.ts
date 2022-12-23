@@ -11,6 +11,7 @@ import {FooterComponent} from "./module/home-page/components/footer/footer.compo
 import {KullaniciComponent} from "./module/home-page/pages/kullanici/kullanici.component";
 import {HesabimNavbarComponent} from "./module/home-page/components/hesabim-navbar/hesabim-navbar.component";
 import {HesabimComponent} from "./module/home-page/components/hesabim/hesabim.component";
+import {TeklifComponent} from "./module/home-page/pages/teklif/teklif.component";
 
 
 const routes: Routes = [
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'hesabim',
     component: HesabimComponent
+  },
+  {
+    path: 'teklif/:id',
+    component: TeklifComponent
   },
 ];
 

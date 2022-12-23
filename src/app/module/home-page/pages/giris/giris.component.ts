@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {FormControl, FormGroup, NgForm} from '@angular/forms';
-import * as events from "events";
-
+import {UserService} from "../../services/user.service";
+import {identity, pickBy} from "lodash-es";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-giris',
@@ -22,11 +22,14 @@ export class GirisComponent implements OnInit {
   userType:string="user";
   usertype:string=""
   adresClass:string=""
+  params={}
 
 
 
-
-  constructor(private authService:AuthService) {
+  constructor(private authService:AuthService,
+              private userService:UserService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
 
   }
 
@@ -40,7 +43,6 @@ export class GirisComponent implements OnInit {
   }
 
   signInButton() {
-
     this.buttonClass = "";
   }
 
@@ -58,7 +60,20 @@ export class GirisComponent implements OnInit {
     this.email=email;
     this.password=password;
     this.authService.login(this.email,this.password).subscribe((data) =>{
+
+      this.setRouterParams()
       console.log("Giriş yapıldı")
+      console.log(data)
+
+
     } , err => console.log("Hatalı bilgiler"));
   }
+
+  setRouterParams() {
+    this.router.navigate(["/hesabim"], {
+      relativeTo: this.activatedRoute,
+      queryParams: pickBy(this.params, identity)
+    });
+  }
 }
+

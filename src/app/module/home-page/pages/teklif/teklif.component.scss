@@ -1,0 +1,61 @@
+.teklif {
+  background-color: #b5e7a0;
+  width: 100%;
+  height: 753px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teklif__pencere {
+
+  background-color: white;
+  color: black;
+  width: 40%;
+  height: 85%;
+}
+
+.teklif__pencere--title {
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.teklif__pencere--head {
+  box-shadow: 0 3px 4px #0000001a;
+}
+
+.teklif-button {
+  width: 80%;
+  font-weight: bold;
+  background-color: #2cb34f;
+  border: none;
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+.teklif__pencere--feet {
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  box-shadow: 0 -3px 4px #0000001a;
+}
+.secim-buton{
+  width: 90%;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: solid 1px #c5c6cd;
+  text-align: left;
+}
+.body-soru{
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 25px;
+}

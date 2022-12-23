@@ -18,10 +18,12 @@ export class HizmetComponent implements OnInit {
   category:any=[]
   categoryName:any=[]
   hizmetTitle:string=""
+  ruleTemplate={}
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              private workCategoryService:WorkCategoryService) {
+              private workCategoryService:WorkCategoryService,
+              ) {
 
     this.params={
       page:  '',
@@ -29,7 +31,6 @@ export class HizmetComponent implements OnInit {
     }
 
   }
-
 
   ngOnInit(): void {
     this.workCategory()
@@ -40,6 +41,10 @@ export class HizmetComponent implements OnInit {
     return this.workCategoryService.getWorkCategory().subscribe(
       data=>{
         this.workCategoryList.push(data)
+
+        var veri=this.workCategoryList[0][7].ruleTemplate
+        this.ruleTemplate  = JSON.parse(veri)
+        console.log(this.ruleTemplate)
         console.log(this.workCategoryList)
 
         for (let catg of this.workCategoryList[0]){
@@ -50,7 +55,6 @@ export class HizmetComponent implements OnInit {
         this.getCategoryName()
       } ,
       err => console.log("Category verileri getirilemedi"))
-
   }
 
   getCategoryName(){

@@ -43,7 +43,6 @@ export class FormSearchComponent implements OnInit {
     this.router.navigate(["/"+mainPage], {
       relativeTo: this.activatedRoute,
       queryParams: pickBy(this.params, identity)
-
     });
   }
 

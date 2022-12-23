@@ -20,6 +20,7 @@ import {RouterLinkWithHref} from "@angular/router";
 import { KullaniciComponent } from './pages/kullanici/kullanici.component';
 import { HesabimComponent } from './components/hesabim/hesabim.component';
 import { HesabimNavbarComponent } from './components/hesabim-navbar/hesabim-navbar.component';
+import { TeklifComponent } from './pages/teklif/teklif.component';
 
 
 
@@ -41,7 +42,8 @@ import { HesabimNavbarComponent } from './components/hesabim-navbar/hesabim-navb
     SimpleNavbarComponent,
     KullaniciComponent,
     HesabimComponent,
-    HesabimNavbarComponent
+    HesabimNavbarComponent,
+    TeklifComponent
 
   ],
   exports: [
