@@ -17,6 +17,15 @@ export class HizmetComponent implements OnInit {
   params={}
   category:any=[]
   categoryName:any=[]
+  categoryId:any=[]
+  categoryCounter:number=0;
+  veriler={
+    title:[],
+    categoryName:[],
+    categoryId:[],
+
+  }
+
   hizmetTitle:string=""
   ruleTemplate={}
 
@@ -30,23 +39,22 @@ export class HizmetComponent implements OnInit {
 
     }
 
+
   }
 
   ngOnInit(): void {
     this.workCategory()
     this.getCategoryName()
+    console.log(this.categoryName)
+    console.log(this.categoryId)
+
   }
 
   workCategory(){
     return this.workCategoryService.getWorkCategory().subscribe(
       data=>{
+
         this.workCategoryList.push(data)
-
-        var veri=this.workCategoryList[0][7].ruleTemplate
-        this.ruleTemplate  = JSON.parse(veri)
-        console.log(this.ruleTemplate)
-        console.log(this.workCategoryList)
-
         for (let catg of this.workCategoryList[0]){
           if (catg.parentId==this.getPageId()){
             this.category.push(catg)
@@ -62,9 +70,17 @@ export class HizmetComponent implements OnInit {
       if (this.category.hasOwnProperty(key)) {
         length += 1;
         this.categoryName.push(this.category[key].name)
+        this.categoryId.push(this.category[key].id)
+        this.veriler={
+          title: this.category,
+          categoryName:this.categoryName,
+          categoryId:this.categoryId,
+
+        }
+
       }
     }
-
+    console.log(this.veriler)
   }
 
   getPageId(){

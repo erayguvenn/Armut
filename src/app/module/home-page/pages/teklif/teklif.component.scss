@@ -28,19 +28,18 @@
 }
 
 .teklif-button {
-  width: 80%;
+  width: 90%;
   font-weight: bold;
   background-color: #2cb34f;
   border: none;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 
 }
 
 .teklif__pencere--feet {
   padding-bottom: 20px;
   padding-top: 20px;
-
   box-shadow: 0 -3px 4px #0000001a;
 }
 .secim-buton{
@@ -51,11 +50,25 @@
   margin-right: 5%;
   border: solid 1px #c5c6cd;
   text-align: left;
+  background-color: #111111;
+  color: white;
 }
+
 .body-soru{
   color: black;
   text-align: center;
   padding: 10px 0;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
+}
+.teklif__pencere--body{
+overflow: auto;
+  padding-bottom:20px ;
+}
+.btn-outline-secondary{
+  width: 90%;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
