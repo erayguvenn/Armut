@@ -1,0 +1,24 @@
+<h2 class="pt-4 ps-5">Temizlik İş Listesi</h2>
+<div style="align-items: center" class="d-flex flex-wrap mx-5">
+  <div  class=" work-list-card card  d-flex flex-wrap mx-1 my-2" *ngFor="let item of worklist; let i =index">
+    <div class="card-body ">
+      <div style="position:relative;" class="" >
+        <table class=" table table-striped table-sm "   >
+          <thead>
+          <tr class="row ps-3">
+            <th class="col-9" scope="col">Sorular</th>
+            <th  class="col-3" scope="col">Cevaplar</th>
+          </tr>
+          </thead>
+          <tbody >
+          <tr class="row ps-3" *ngFor="let item2 of item.ruleFill.sorular; let i =index"  >
+            <td class="col-9">{{item2}}</td>
+            <td class="col-3">{{item.ruleFill.cevaplar[i]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <button  type="button" class="btn btn-secondary basvur-buton px-4">Başvur</button>
+    </div>
+  </div>
+</div>

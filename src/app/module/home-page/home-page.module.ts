@@ -21,6 +21,7 @@ import { KullaniciComponent } from './pages/kullanici/kullanici.component';
 import { HesabimComponent } from './components/hesabim/hesabim.component';
 import { HesabimNavbarComponent } from './components/hesabim-navbar/hesabim-navbar.component';
 import { TeklifComponent } from './pages/teklif/teklif.component';
+import { WorkListComponent } from './pages/work-list/work-list.component';
 
 
 
@@ -43,7 +44,8 @@ import { TeklifComponent } from './pages/teklif/teklif.component';
     KullaniciComponent,
     HesabimComponent,
     HesabimNavbarComponent,
-    TeklifComponent
+    TeklifComponent,
+    WorkListComponent
 
   ],
   exports: [

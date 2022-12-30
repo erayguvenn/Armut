@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkCategoryService} from "../../services/work-category.service";
 import {ActivatedRoute} from "@angular/router";
+import {WorkListingService} from "../../services/work-listing.service";
 
 @Component({
   selector: 'app-teklif',
@@ -18,6 +19,7 @@ export class TeklifComponent implements OnInit {
   progressbarWidth:number=0;
   progressbarStyle:string="";
   inputVisibility:boolean=false
+  data={}
 
   sorular: String[]=[]
   cevaplar: String[]=[]
@@ -30,7 +32,8 @@ export class TeklifComponent implements OnInit {
 
 
   constructor(private workCategoryService:WorkCategoryService,
-              private route:ActivatedRoute) { }
+              private route:ActivatedRoute,
+              private service:WorkListingService) { }
 
   ngOnInit(): void {
 
@@ -39,6 +42,14 @@ export class TeklifComponent implements OnInit {
     })
     this.progressbarStyle="width: "+ this.progressbarWidth+"%"
 
+  }
+
+  setWorkList(categoryId: number, state: string, ruleFill:string){
+    this.service.setWorkListing(categoryId,state,ruleFill).subscribe((data) =>{
+
+      console.log(data)
+
+    } , err => console.log("Hatalı bilgiler"));
   }
 
   workCategory(){
@@ -173,8 +184,17 @@ export class TeklifComponent implements OnInit {
       this.sorular.push(this.question)
       this.cevaplar.push( this.textareaValue)
     }
-    console.log(this.sorular)
-    console.log(this.cevaplar)
+   // console.log(this.sorular)
+   // console.log(this.cevaplar)
+
+    this.data={
+      sorular:this.sorular,
+      cevaplar:this.cevaplar
+    }
+    console.log(this.data)
+
+    var newData=JSON.stringify(this.data);
+    this.setWorkList(1,"waiting_approval",newData)
   }
 
 }

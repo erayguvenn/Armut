@@ -12,6 +12,7 @@ import {KullaniciComponent} from "./module/home-page/pages/kullanici/kullanici.c
 import {HesabimNavbarComponent} from "./module/home-page/components/hesabim-navbar/hesabim-navbar.component";
 import {HesabimComponent} from "./module/home-page/components/hesabim/hesabim.component";
 import {TeklifComponent} from "./module/home-page/pages/teklif/teklif.component";
+import {WorkListComponent} from "./module/home-page/pages/work-list/work-list.component";
 
 
 const routes: Routes = [
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'teklif/:id',
     component: TeklifComponent
+  },
+  {
+    path: 'worklist',
+    component: WorkListComponent
   },
 ];
 
