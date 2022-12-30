@@ -9,6 +9,7 @@ import {set} from "lodash-es";
 })
 export class WorkListComponent implements OnInit {
   worklist:any=[]
+  bidValue={}
 
 
   constructor(private workListService: WorkListingService) {
@@ -42,4 +43,17 @@ export class WorkListComponent implements OnInit {
       err => console.log("iş listesi getirilemedi"))
   }
 
+  sendBid() {
+    const input = document.querySelector('input') as HTMLInputElement;
+    const value = input.value;
+    const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
+    const taValue = textarea.value;
+    this.bidValue={
+      bid:value,
+      message:taValue
+    }
+
+    console.log(this.bidValue)
+
+  }
 }
