@@ -12,10 +12,10 @@ export class WorkListingService {
     return this.http.get("https://localhost:7058/api/WorkListing")
   }
 
-  setWorkListing(categoryId: number, state: string, ruleFill:string) {
+  setWorkListing(categoryId: number, state: string, ruleFill:string,userId:number) {
     return this.http.post(
       `https://localhost:7058/api/WorkListing/worklist`,
-      { categoryId, state,ruleFill},{withCredentials: true}
+      { categoryId, state,ruleFill,userId},{withCredentials: true}
     )
   }
 

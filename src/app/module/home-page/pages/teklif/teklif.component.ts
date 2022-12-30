@@ -44,8 +44,8 @@ export class TeklifComponent implements OnInit {
 
   }
 
-  setWorkList(categoryId: number, state: string, ruleFill:string){
-    this.service.setWorkListing(categoryId,state,ruleFill).subscribe((data) =>{
+  setWorkList(categoryId: number, state: string, ruleFill:string,userId:number){
+    this.service.setWorkListing(categoryId,state,ruleFill,userId).subscribe((data) =>{
 
       console.log(data)
 
@@ -194,7 +194,7 @@ export class TeklifComponent implements OnInit {
     console.log(this.data)
 
     var newData=JSON.stringify(this.data);
-    this.setWorkList(1,"waiting_approval",newData)
+    this.setWorkList(1,"waiting_approval",newData,1)
   }
 
 }
