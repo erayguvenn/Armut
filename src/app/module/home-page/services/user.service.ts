@@ -14,5 +14,12 @@ export class UserService {
       withCredentials:true
     })
   }
+  getUserValue(id:number){
+    return this.http.get("https://localhost:7058/api/user/"+id,{
+      withCredentials:true
+    })
+  }
+
+
 
 }

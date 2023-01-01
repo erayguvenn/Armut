@@ -41,8 +41,6 @@ export class HesabimComponent implements OnInit {
         this.sifre = this.user.password
       }
       , err => console.log("Hatalı bilgiler"))
-
-
   }
 
 }

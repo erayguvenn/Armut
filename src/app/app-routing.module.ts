@@ -13,6 +13,7 @@ import {HesabimNavbarComponent} from "./module/home-page/components/hesabim-navb
 import {HesabimComponent} from "./module/home-page/components/hesabim/hesabim.component";
 import {TeklifComponent} from "./module/home-page/pages/teklif/teklif.component";
 import {WorkListComponent} from "./module/home-page/pages/work-list/work-list.component";
+import {TekliflerComponent} from "./module/home-page/pages/teklifler/teklifler.component";
 
 
 const routes: Routes = [
@@ -72,6 +73,10 @@ const routes: Routes = [
   {
     path: 'worklist',
     component: WorkListComponent
+  },
+  {
+    path: 'teklifler',
+    component: TekliflerComponent
   },
 ];
 

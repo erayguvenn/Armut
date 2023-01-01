@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {WorkListingService} from "../../services/work-listing.service";
 import {set} from "lodash-es";
+import {WorkerService} from "../../services/worker.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-work-list',
@@ -10,14 +12,17 @@ import {set} from "lodash-es";
 export class WorkListComponent implements OnInit {
   worklist:any=[]
   bidValue={}
+  worklistId:number=0
+  workerId:any
 
-
-  constructor(private workListService: WorkListingService) {
+  constructor(private workListService: WorkListingService,
+              private workerService:WorkerService,
+              private userservice:UserService) {
   }
 
   ngOnInit(): void {
     this.getWorkList()
-
+    this.getUser()
 
   }
 
@@ -52,8 +57,38 @@ export class WorkListComponent implements OnInit {
       bid:value,
       message:taValue
     }
-
     console.log(this.bidValue)
-
+    this.setBidService(this.worklistId,this.workerId,+value,taValue,false)
   }
+  setBidService(worklistingId:number,workerId:number,price:number,message:string,accepted:boolean){
+    this.workListService.setBid( worklistingId, workerId,price,message,accepted).subscribe((data) =>{
+      console.log(data)
+    } , err => console.log("Hatalı bilgiler"));
+  }
+
+  setWorklistId(id:number) {
+    this.worklistId=id
+  }
+
+  getUser() {
+    return this.userservice.getUser().subscribe(d => {
+      const data = d as any;
+        console.log(data)
+      const userId=data.id
+
+      this.getWroker(userId)
+      }
+      , err => console.log("Hatalı bilgiler"))
+  }
+
+  getWroker(userId:number){
+    return this.workerService.getWorker(userId).subscribe(d => {
+        const data = d as any;
+        this.workerId=data[0].workerId
+        console.log(data)
+      },
+      err => console.log("Çalışan getirilemedi"))
+  }
+
+
 }

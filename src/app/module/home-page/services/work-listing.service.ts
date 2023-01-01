@@ -18,5 +18,17 @@ export class WorkListingService {
       { categoryId, state,ruleFill,userId},{withCredentials: true}
     )
   }
+  setBid(worklistingId:number,workerId:number,price:number,message:string,accepted:boolean){
+    return this.http.post(
+      `https://localhost:7058/api/Bids/bids`,
+      { worklistingId, workerId,price,message,accepted},{withCredentials: true}
+    )
+  }
+  getBids(){
+    return this.http.get("https://localhost:7058/api/Bids")
+  }
+  getWorklistBids(id:number){
+    return this.http.get("https://localhost:7058/api/Bids/"+id)
+  }
 
 }
