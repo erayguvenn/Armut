@@ -3,6 +3,7 @@ import {WorkListingService} from "../../services/work-listing.service";
 import {set} from "lodash-es";
 import {WorkerService} from "../../services/worker.service";
 import {UserService} from "../../services/user.service";
+import {UserModel} from "../../../../model/user.model";
 
 @Component({
   selector: 'app-work-list',
@@ -14,10 +15,13 @@ export class WorkListComponent implements OnInit {
   bidValue={}
   worklistId:number=0
   workerId:any
+  user: any;
+  userId:number=1
 
   constructor(private workListService: WorkListingService,
               private workerService:WorkerService,
-              private userservice:UserService) {
+              private userservice:UserService,
+              private userModel:UserModel) {
   }
 
   ngOnInit(): void {
@@ -71,15 +75,14 @@ export class WorkListComponent implements OnInit {
   }
 
   getUser() {
-    return this.userservice.getUser().subscribe(d => {
-      const data = d as any;
-        console.log(data)
-      const userId=data.id
+    this.user = this.userModel.getUser()
+    this.userId = this.user.id
+    if (this.user.workerId != null) {
+      this.getWroker(this.userId)
+    }
 
-      this.getWroker(userId)
-      }
-      , err => console.log("Hatalı bilgiler"))
   }
+
 
   getWroker(userId:number){
     return this.workerService.getWorker(userId).subscribe(d => {

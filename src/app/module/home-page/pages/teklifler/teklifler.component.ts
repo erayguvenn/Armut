@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {WorkListingService} from "../../services/work-listing.service";
 import {UserService} from "../../services/user.service";
-import {HttpClient} from "@angular/common/http";
-import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
+import {UserModel} from "../../../../model/user.model";
+import {WorkerService} from "../../services/worker.service";
 
 @Component({
   selector: 'app-teklifler',
@@ -13,18 +14,18 @@ export class TekliflerComponent implements OnInit {
   worklistBids: any[] = []
   userId: number = 1
   user: any = []
-  sessionValue:any
+
 
   constructor(private worklistservice: WorkListingService,
-              private userservice: UserService) {
+              private userservice: UserService,
+              private router: Router,
+              private usermodel: UserModel,
+              private workerService: WorkerService) {
   }
 
 
   ngOnInit(): void {
     this.getUser()
-    this.sessionValue = this.getCookie('session');
-    console.log(this.sessionValue);
-
 
   }
 
@@ -33,7 +34,7 @@ export class TekliflerComponent implements OnInit {
       d => {
         const data = d as any[];
         this.worklistBids.push(data);
-        console.log(this.worklistBids);
+       // console.log(this.worklistBids);
       },
       err => console.log("Teklifler getirilemedi"))
   }
@@ -51,37 +52,32 @@ export class TekliflerComponent implements OnInit {
 
 
   getUser() {
-    return this.userservice.getUser().subscribe(data => {
-        this.user = data
-        console.log(this.user)
-        this.getWorklistAll()
-
-      }
-      , err => console.log("Hatalı bilgiler"))
+    this.user = this.usermodel.getUser();
+    console.log(this.user)
+    this.getWorklistAll()
   }
 
   worklistUserControl(data: any) {
     for (let item of data) {
-      if (item.userId == this.user.id) {
+      if (item.userId == this.usermodel.getUserId()) {
         this.getBid(item.id)
       }
     }
   }
 
-  getCookie(cname:any) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
 
+  chatRoute(workerId: number, bidId: number) {
+
+    this.usermodel.setBidId(bidId);
+    this.workerService.getWorkerData(workerId).subscribe(d => {
+      const data = d as any;
+      this.usermodel.setWorkerId(data.user.id);
+      console.log(data.user.id)
+    })
+    console.log(workerId)
+    console.log(bidId)
+
+
+    this.router.navigate(['/chat']);
+  }
 }

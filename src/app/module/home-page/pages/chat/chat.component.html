@@ -1,0 +1,12 @@
+<div class="mt-5 chat-main">
+  <div class="chat-frame" >
+    <div class="m-2 send-message ">
+      <div *ngFor="let message of messages">
+        {{ message }}
+      </div>
+        <textarea placeholder="Mesajınızı giriniz.." class=" form-control col-10" [(ngModel)]="message" rows="3"></textarea>
+        <button (click)="sendMessage()" class="send-message-button col-1"><i style="color: white" class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+

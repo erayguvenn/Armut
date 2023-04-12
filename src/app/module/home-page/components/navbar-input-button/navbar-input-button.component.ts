@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {UserModel} from "../../../../model/user.model";
 
 @Component({
   selector: 'app-navbar-input-button',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarInputButtonComponent implements OnInit {
 
-  constructor() { }
+  userName:string = "Kullanıcı Adı";
+
+  constructor(private authservice:AuthService,
+              private usermodel:UserModel) {
+
+  }
 
   ngOnInit(): void {
+    if (this.isAuthenticated()){
+      this.getUser();
+    }
+  }
+
+  isAuthenticated(){
+    return this.authservice.isAuthenticated();
+  }
+  logout() {
+    this.authservice.logout().then(() => {
+      window.location.href = '/';
+    })
+  }
+
+  getUser(){
+    if (this.isAuthenticated()){
+      const user =this.usermodel.getUser()
+      console.log(user)
+      this.userName = user.name+" "+user.surname
+      this.userName = this.userName.toUpperCase()
+    }
   }
 
 

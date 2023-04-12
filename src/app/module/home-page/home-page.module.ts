@@ -23,6 +23,7 @@ import { HesabimNavbarComponent } from './components/hesabim-navbar/hesabim-navb
 import { TeklifComponent } from './pages/teklif/teklif.component';
 import { WorkListComponent } from './pages/work-list/work-list.component';
 import { TekliflerComponent } from './pages/teklifler/teklifler.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 
 
@@ -47,7 +48,8 @@ import { TekliflerComponent } from './pages/teklifler/teklifler.component';
     HesabimNavbarComponent,
     TeklifComponent,
     WorkListComponent,
-    TekliflerComponent
+    TekliflerComponent,
+    ChatComponent,
 
   ],
   exports: [

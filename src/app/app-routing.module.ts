@@ -14,14 +14,11 @@ import {HesabimComponent} from "./module/home-page/components/hesabim/hesabim.co
 import {TeklifComponent} from "./module/home-page/pages/teklif/teklif.component";
 import {WorkListComponent} from "./module/home-page/pages/work-list/work-list.component";
 import {TekliflerComponent} from "./module/home-page/pages/teklifler/teklifler.component";
+import {AuthGuard} from "./module/home-page/services/auth.guard";
+import {ChatComponent} from "./module/home-page/pages/chat/chat.component";
 
 
 const routes: Routes = [
-
-  {
-    path: 'card',
-    component: CardsComponent
-  },
   {
     path: 'uyeol',
     component: UyeOlComponent
@@ -32,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'hizmetver',
-    component: HizmetverComponent
+    component: HizmetverComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'hizmet',
@@ -51,32 +49,29 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'footer',
-    component: FooterComponent
-  },
-  {
-    path: 'kullanici',
-    component: KullaniciComponent
-  },
-  {
-    path: 'hesabim-navbar',
-    component: HesabimNavbarComponent
-  },
-  {
     path: 'hesabim',
-    component: HesabimComponent
+    component: HesabimComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'teklif/:id',
-    component: TeklifComponent
+    component: TeklifComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'worklist',
-    component: WorkListComponent
+    component: WorkListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'teklifler',
-    component: TekliflerComponent
+    component: TekliflerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

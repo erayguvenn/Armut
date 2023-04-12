@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
+import {AuthService} from "../../services/auth.service";
+import {UserModel} from "../../../../model/user.model";
 
 
 @Component({
@@ -20,9 +22,11 @@ export class HesabimComponent implements OnInit {
   adres: any
 
   constructor(private userService: UserService,
+              private userModel:UserModel,
               private router: Router,
               private activatedRoute: ActivatedRoute,
-              public cookie: CookieService) {
+              public cookie: CookieService,
+              private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -31,16 +35,14 @@ export class HesabimComponent implements OnInit {
   }
 
   getUser() {
-    return this.userService.getUser().subscribe(data => {
-        this.user = data
-        console.log(this.user)
-        this.name = this.user.name
-        this.surname = this.user.surname
-        this.telNo = this.user.phoneNumber
-        this.email = this.user.email
-        this.sifre = this.user.password
-      }
-      , err => console.log("Hatalı bilgiler"))
+    this.user = this.userModel.getUser();
+    console.log(this.user)
+    this.name = this.user.name
+    this.surname = this.user.surname
+    this.telNo = this.user.phoneNumber
+    this.email = this.user.email
+    this.sifre = this.user.password
+
   }
 
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +10,12 @@ import { ToastrModule } from 'ngx-toastr';
 import {AlertModule} from "ngx-bootstrap/alert";
 import {CookieService} from "ngx-cookie-service";
 import {NgxPaginationModule} from 'ngx-pagination';
+import {AuthService} from "./module/home-page/services/auth.service";
+import {UserModel} from "./model/user.model";
 
-
+export function startAuthentication(authService: AuthService) {
+  return () => authService.checkAuthenticated();
+}
 
 @NgModule({
   declarations: [
@@ -27,10 +31,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AlertModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
 
   ],
-  providers: [CookieService],
+  providers: [CookieService, UserModel, {
+    provide: APP_INITIALIZER,
+    useFactory: startAuthentication,
+    multi: true,
+    deps: [AuthService]
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

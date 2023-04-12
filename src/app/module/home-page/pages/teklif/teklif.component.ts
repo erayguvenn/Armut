@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkCategoryService} from "../../services/work-category.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {WorkListingService} from "../../services/work-listing.service";
+import {identity, pickBy} from "lodash-es";
+import {UserModel} from "../../../../model/user.model";
 
 @Component({
   selector: 'app-teklif',
@@ -20,6 +22,10 @@ export class TeklifComponent implements OnInit {
   progressbarStyle:string="";
   inputVisibility:boolean=false
   data={}
+  params={}
+  user:any
+  userId:number=1
+
 
   sorular: String[]=[]
   cevaplar: String[]=[]
@@ -33,10 +39,13 @@ export class TeklifComponent implements OnInit {
 
   constructor(private workCategoryService:WorkCategoryService,
               private route:ActivatedRoute,
-              private service:WorkListingService) { }
+              private service:WorkListingService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private userModel:UserModel) { }
 
   ngOnInit(): void {
-
+    this.getUser()
     this.workCategory().add(() => {
       this.getCategoryQuestions(this.counter)
     })
@@ -44,10 +53,16 @@ export class TeklifComponent implements OnInit {
 
   }
 
+    getUser(){
+      this.user = this.userModel.getUser()
+      this.userId = this.user.id
+    }
+
   setWorkList(categoryId: number, state: string, ruleFill:string,userId:number){
     this.service.setWorkListing(categoryId,state,ruleFill,userId).subscribe((data) =>{
 
       console.log(data)
+      this.setRouterParams()
 
     } , err => console.log("Hatalı bilgiler"));
   }
@@ -82,7 +97,6 @@ export class TeklifComponent implements OnInit {
 
   setCounter() {
     console.log(this.workCategoryList)
-
     const selectedRadioButton = document.querySelector('input[type="radio"]:checked') as HTMLInputElement;
     if (selectedRadioButton) {
       const radioButtonLabel = selectedRadioButton.nextElementSibling as HTMLLabelElement;
@@ -99,7 +113,6 @@ export class TeklifComponent implements OnInit {
       //this.sorular.push(this.question)
       console.log('No radio button is selected ');
     }
-
     try {
       const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
        this.textareaValue = textarea.value;
@@ -194,7 +207,13 @@ export class TeklifComponent implements OnInit {
     console.log(this.data)
 
     var newData=JSON.stringify(this.data);
-    this.setWorkList(1,"waiting_approval",newData,1)
+    this.setWorkList(1,"waiting_approval",newData,this.userId)
+  }
+  setRouterParams() {
+    this.router.navigate([""], {
+      relativeTo: this.activatedRoute,
+      queryParams: pickBy(this.params, identity)
+    });
   }
 
 }

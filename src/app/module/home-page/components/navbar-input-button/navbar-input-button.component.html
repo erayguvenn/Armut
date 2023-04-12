@@ -1,3 +1,16 @@
 <a href="yardim" class="btn btn-light">Yardım</a>
-<a href="hizmetver" class="btn btn-outline-success">Hizmet Ver</a>
-<a href="giris"  class="btn btn-light">Giriş</a>
+<a *ngIf="false" href="hizmetver" class="btn btn-outline-success">Hizmet Ver</a>
+<a *ngIf="!isAuthenticated()" href="giris"  class="btn btn-light">Giriş</a>
+
+<div *ngIf="isAuthenticated()" class="btn-group">
+  <button type="button" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="me-2 fas fa-user btn-outline-success"></i>{{userName}}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="hesabim">Hesabım</a></li>
+    <li><a class="dropdown-item" href="worklist">İş listesi </a></li>
+    <li><a class="dropdown-item" href="teklifler">Teklifler </a></li>
+    <li (click)="logout()"><a class="dropdown-item" href=""(click)="$event.preventDefault()">Çıkış yap </a></li>
+
+  </ul>
+</div>

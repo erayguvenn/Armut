@@ -10,7 +10,7 @@
           <li><i style="color: white" class="fa-solid fa-user"></i><a class="item" href="hesabim"> Profilim</a></li>
           <li><i style="color: white" class="fa-solid fa-cart-shopping"></i><a class="item" href="#"> Siparişlerim</a></li>
           <li><i style="color: white" class="fa-solid fa-tag"></i><a class="item" href="#"> İndirim Kuponlarım</a></li>
-          <li><i style="color: white" class="fa-regular fa-circle-xmark"></i><a class="item" href="#"> Çıkış yap</a></li>
+          <li (click)="logout()"><i style="color: white" class="fa-regular fa-circle-xmark"></i><a class="item" href="#" (click)="$event.preventDefault()"> Çıkış yap</a></li>
         </ul>
       </li>
     </ul>

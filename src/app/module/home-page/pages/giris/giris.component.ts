@@ -59,18 +59,16 @@ export class GirisComponent implements OnInit {
   signIn(email:string,password:string) {
     this.email=email;
     this.password=password;
-    this.authService.login(this.email,this.password).subscribe((data) =>{
+    this.authService.login(this.email,this.password).then(x => {
 
       this.setRouterParams()
       console.log("Giriş yapıldı")
-      console.log(data)
-
-
-    } , err => console.log("Hatalı bilgiler"));
+      console.log(x)
+    }).catch(err => console.log("Hatalı bilgiler"))
   }
 
   setRouterParams() {
-    this.router.navigate(["/hesabim"], {
+    this.router.navigate([""], {
       relativeTo: this.activatedRoute,
       queryParams: pickBy(this.params, identity)
     });

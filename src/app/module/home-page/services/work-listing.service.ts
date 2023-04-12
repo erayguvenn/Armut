@@ -5,30 +5,31 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class WorkListingService {
+  serverUrl = "http://3.127.53.229:60001";
 
   constructor(private http: HttpClient) { }
 
   getWorkList(){
-    return this.http.get("https://localhost:7058/api/WorkListing")
+    return this.http.get(this.serverUrl+"/api/WorkListing")
   }
 
   setWorkListing(categoryId: number, state: string, ruleFill:string,userId:number) {
     return this.http.post(
-      `https://localhost:7058/api/WorkListing/worklist`,
+      this.serverUrl+`/api/WorkListing/worklist`,
       { categoryId, state,ruleFill,userId},{withCredentials: true}
     )
   }
   setBid(worklistingId:number,workerId:number,price:number,message:string,accepted:boolean){
     return this.http.post(
-      `https://localhost:7058/api/Bids/bids`,
+      this.serverUrl+`/api/Bids/bids`,
       { worklistingId, workerId,price,message,accepted},{withCredentials: true}
     )
   }
   getBids(){
-    return this.http.get("https://localhost:7058/api/Bids")
+    return this.http.get(this.serverUrl+"/api/Bids")
   }
   getWorklistBids(id:number){
-    return this.http.get("https://localhost:7058/api/Bids/"+id)
+    return this.http.get(this.serverUrl+"/api/Bids/"+id)
   }
 
 }
